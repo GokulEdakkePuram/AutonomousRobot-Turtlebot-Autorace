@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import ast
 import math
 import time
@@ -49,28 +50,41 @@ class LaserModel(object):
     '''
 
     def calc_angle_inc(self):
-        return None
+        angle_inc = (self.angle_max-self.angle_min)/len(self.scan_data)
+        #self.set_angle_inc(angle_inc)
+        return angle_inc
 
     '''
     TODO: port your code from previous exercise
     '''
 
     def calc_index_of_closest_point(self):
-        return None
-
+        sort_scan = sorted(self.scan_data)
+        for val in sort_scan:
+            if val == 0.0:
+                continue
+            else:
+                break
+        ind = self.scan_data.index(val)
+        return ind
     '''
     TODO: port your code from previous exercise
     '''
 
     def calc_angle_of_closest_point(self):
-        return None
+        index = self.calc_index_of_closest_point()
+        angle_inc = self.calc_angle_inc()
+        loc_ang = index * angle_inc
+        tot_ang = self.angle_min + loc_ang
+        return tot_ang
+        
 
     '''
     core method for your function calls etc
     '''
 
     def run(self):
-        self.update_laserdata("laser-testdata_2")
+        self.update_laserdata("laser-testdata/laser-testdata_2")
         # print current results
         print("-"*20 +
               str("\nCurrent cycle: {0}" +
@@ -84,10 +98,8 @@ if __name__ == '__main__':
 
     # instantiate the class and set some parameters
     app = LaserModel(-math.pi/2, math.pi/2, 0.0, 7.0)
-    app.update_laserdata("laser-testdata_2")
+    app.update_laserdata("laser-testdata/laser-testdata_2")
     app.set_angle_inc(app.calc_angle_inc())
-
-    import ipdb; ipdb.set_trace()
 
     print("-"*20 +
           str("\nAngle increment: {}" +
