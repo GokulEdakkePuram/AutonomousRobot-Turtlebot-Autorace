@@ -1,0 +1,16 @@
+services:
+  test-service:
+    container_name: my-gui-container
+    image: myfirstdockerimage
+    environment:
+      - DISPLAY=host.docker.internal:0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command:
+      - bash
+      - -c
+      - |
+        echo "container starting"
+        apt update
+        apt install -y x11-apps
+        xeyes
