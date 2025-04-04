@@ -1,12 +1,13 @@
 services:
   test-service:
     container_name: my-container
-    image: myfirstdockerimage
+    image: myfirstdockerimage2
+    build:
+      context: .
+      dockerfile: Dockerfile
     command:
       - bash
       - -c
       - |
         echo "container starting"
-        apt update
-        apt install -y htop bmon vim
         tail -f /dev/null
