@@ -1,0 +1,4 @@
+services:
+  some-name:
+    image: myfirstdockerimage
+    command: tail -f /dev/null
