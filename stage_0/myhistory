@@ -1,0 +1,16 @@
+  811  git push
+  812  ls
+  813  cd ..
+  814  cd ..
+  815  ls
+  816  cd AMR
+  817  ls
+  818  cd ge-235725_tier1
+  819  ls
+  820  sh ./getPcSpecs.sh
+  821  git status
+  822  git add pcspecs.txt
+  823  git -m "executed script from issue #5; closes #5" 
+  824  git commit -m "executed script from issue #5; closes #5" 
+  825  git push
+  826  touch myhistory
