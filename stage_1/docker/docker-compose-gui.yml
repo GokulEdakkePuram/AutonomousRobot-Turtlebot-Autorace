@@ -3,9 +3,11 @@ services:
     container_name: my-gui-container
     image: myfirstdockerimage
     environment:
-      - DISPLAY=host.docker.internal:0
+      DISPLAY: $DISPLAY
+      QT_X11_NO_MITSHM: "1"
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/root/.Xauthority
     command:
       - bash
       - -c
