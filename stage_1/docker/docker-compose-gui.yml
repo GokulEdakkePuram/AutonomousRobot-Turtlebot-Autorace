@@ -1,0 +1,18 @@
+services:
+  test-service:
+    container_name: my-gui-container
+    image: myfirstdockerimage
+    environment:
+      DISPLAY: $DISPLAY
+      QT_X11_NO_MITSHM: "1"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/root/.Xauthority
+    command:
+      - bash
+      - -c
+      - |
+        echo "container starting"
+        apt update
+        apt install -y x11-apps
+        xeyes

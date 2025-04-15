@@ -1,0 +1,5 @@
+services:
+  test-service:
+    container_name: my-container
+    image: myfirstdockerimage
+    command: tail -f /dev/null

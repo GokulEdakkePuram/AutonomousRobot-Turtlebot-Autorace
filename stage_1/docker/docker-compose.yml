@@ -1,0 +1,13 @@
+services:
+  test-service:
+    container_name: my-container
+    image: myfirstdockerimage2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - bash
+      - -c
+      - |
+        echo "container starting"
+        tail -f /dev/null
