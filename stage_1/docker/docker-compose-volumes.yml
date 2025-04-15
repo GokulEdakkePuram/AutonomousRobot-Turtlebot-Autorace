@@ -1,0 +1,18 @@
+services:
+  test-service:
+    container_name: my-container-volumes
+    image: myfirstdockerimage
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    volumes:
+        - $HOME/iki_workspace:/iki_workspace
+    command:
+      - bash
+      - -c
+      - |
+        cd /iki_workspace
+        touch testfile
+        ls -lA
+        ls -lA stage_1
+        tail -f /dev/null
