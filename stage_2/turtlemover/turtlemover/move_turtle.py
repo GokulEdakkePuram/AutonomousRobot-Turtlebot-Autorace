@@ -12,6 +12,7 @@ class TurtleMover(Node):
     def timer_callback(self):
         msg = Twist()
         msg.linear.x = 1.0
+        msg.angular.z = 0.4
         self.pub.publish(msg)
 
 
