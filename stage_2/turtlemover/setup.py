@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'move_turtle = turtlemover.move_turtle:main',
-            'circle_counter = turtlemover.count_circles:main'
+            'circle_counter = turtlemover.count_circles:main',
+            'move_turtle_topic = turtlemover.move_turtle_topic:main'
         ],
     },
 )
