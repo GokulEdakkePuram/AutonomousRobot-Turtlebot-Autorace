@@ -1,0 +1,16 @@
+services:
+  test-service:
+    container_name: ros2-ar
+    image: fbe-dockerreg.rwu.de/prj-iki-ros2/robots/turtlebot3-burger-simulation:main
+    environment:
+      DISPLAY: $DISPLAY
+      QT_X11_NO_MITSHM: "1"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/root/.Xauthority
+      - $IKI_WORKSPACE:/root
+    command:
+      - bash
+      - -c
+      - |
+        tail -f /dev/null
