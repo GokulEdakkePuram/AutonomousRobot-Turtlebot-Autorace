@@ -45,8 +45,8 @@ class FollowTheWall(Node):
                 #rospy.sleep(0.5)
             turn = False
             if abs((self.LaserData[86+180]) - (self.LaserData[94+180])) > self.parallel_threshold:
-                if min(min(self.LaserData[slice(0,5)]),min(self.LaserData[slice(350,360)])) < 0.45 and min(min(self.LaserData[slice(0,5)]),min(self.LaserData[slice(350,360)])) > 0.0:
-                    msg.angular.z = 0.2
+                if self.LaserData[0] < 0.45 and self.LaserData[0] > 0.0:
+                    msg.angular.z = 0.4
                     msg.linear.x = 0.0
                     self.turning_right = False
             #if (self.LaserData[90]-self.FrontDist) > 0.01: 
@@ -90,7 +90,7 @@ class FollowTheWall(Node):
             # Stop moving forward
             msg.linear.x = 0.0
             # Start turning left until parallel to the wall
-            msg.angular.z = 0.2
+            msg.angular.z = 0.7
             self.turning_right = True
             turn = True
             #self.get_logger().info(len(self.))
