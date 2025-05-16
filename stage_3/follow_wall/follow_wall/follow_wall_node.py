@@ -82,7 +82,7 @@ class FollowTheWall(Node):
                 msg.linear.x = 0.0  
                 msg.angular.z = error * fact 
             else:
-                msg.linear.x = 0.5
+                msg.linear.x = 0.3
                 msg.angular.z =0.0
         
         elif min(min(self.LaserData[slice(0,5)]),min(self.LaserData[slice(350,360)])) < self.FrontDist:
@@ -90,7 +90,7 @@ class FollowTheWall(Node):
             # Stop moving forward
             msg.linear.x = 0.0
             # Start turning left until parallel to the wall
-            msg.angular.z = 0.7
+            msg.angular.z = 0.9
             self.turning_right = True
             turn = True
             #self.get_logger().info(len(self.))
