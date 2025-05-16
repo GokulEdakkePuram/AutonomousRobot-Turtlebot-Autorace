@@ -75,7 +75,7 @@ class FollowTheWall(Node):
                     error = -0.01
                     self.get_logger().info('-INF')'''
                 if abs(error) > 0.1:
-                    fact = 1.0
+                    fact = 1.5
                 else:
                     fact = 10.0
                 #self.get_logger().info(error)
@@ -97,7 +97,7 @@ class FollowTheWall(Node):
         else:
             # Move forward
             #self.get_logger().info(f'normal front {self.LaserData[0]}')
-            msg.linear.x = 0.5
+            msg.linear.x = 0.3
             # Stop turning
             msg.angular.z = 0.0
 
