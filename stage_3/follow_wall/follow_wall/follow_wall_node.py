@@ -45,7 +45,7 @@ class FollowTheWall(Node):
                 #rospy.sleep(0.5)
             turn = False
             if abs((self.LaserData[86+180]) - (self.LaserData[94+180])) > self.parallel_threshold:
-                if self.LaserData[0] < 0.45 and self.LaserData[0] > 0.0:
+                if self.LaserData[0] < 0.5 and self.LaserData[0] > 0.0:
                     msg.angular.z = 0.4
                     msg.linear.x = 0.0
                     self.turning_right = False
