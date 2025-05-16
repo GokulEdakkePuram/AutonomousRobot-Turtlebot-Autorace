@@ -12,10 +12,10 @@ class FollowTheWall(Node):
 
         self.LaserData = None
 
-        self.parallel_threshold = 0.005  # Threshold for being parallel to the wall
+        self.parallel_threshold = 0.05  # Threshold for being parallel to the wall
         self.turning_right = False
         self.turning_left = False
-        self.FrontDist = 2.5
+        self.FrontDist = 1.5
 
 
         self.timer = self.create_timer(0.1, self.timer_callback)
@@ -68,7 +68,7 @@ class FollowTheWall(Node):
                     else:
                         fact = 10.0
                     msg.linear.x = 0.0  
-                    msg.angular.z = error * fact * 1.5
+                    msg.angular.z = error * fact
                     #self.get_logger().info(f"ang z: {error*fact}")
                     self.cmd_vel_pub.publish(msg)
                 '''if error < -0.1:
@@ -80,9 +80,9 @@ class FollowTheWall(Node):
                     fact = 10.0
                 #self.get_logger().info(error)
                 msg.linear.x = 0.0  
-                msg.angular.z = error * fact * 1.5
+                msg.angular.z = error * fact 
             else:
-                msg.linear.x = 2.0
+                msg.linear.x = 0.8
                 msg.angular.z =0.0
         
         elif min(min(self.LaserData[slice(0,5)]),min(self.LaserData[slice(350,360)])) < self.FrontDist:
@@ -90,14 +90,14 @@ class FollowTheWall(Node):
             # Stop moving forward
             msg.linear.x = 0.0
             # Start turning left until parallel to the wall
-            msg.angular.z = 1.5
+            msg.angular.z = 1.0
             self.turning_right = True
             turn = True
             #self.get_logger().info(len(self.))
         else:
             # Move forward
             #self.get_logger().info(f'normal front {self.LaserData[0]}')
-            msg.linear.x = 2.0
+            msg.linear.x = 0.8
             # Stop turning
             msg.angular.z = 0.0
 
