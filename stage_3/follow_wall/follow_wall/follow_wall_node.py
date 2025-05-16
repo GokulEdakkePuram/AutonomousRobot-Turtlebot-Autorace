@@ -15,7 +15,7 @@ class FollowTheWall(Node):
         self.parallel_threshold = 0.005  # Threshold for being parallel to the wall
         self.turning_right = False
         self.turning_left = False
-        self.FrontDist = 1.0
+        self.FrontDist = 2.0
 
 
         self.timer = self.create_timer(0.1, self.timer_callback)
@@ -82,7 +82,7 @@ class FollowTheWall(Node):
                 msg.linear.x = 0.0  
                 msg.angular.z = error * fact 
             else:
-                msg.linear.x = 0.5
+                msg.linear.x = 0.8
                 msg.angular.z =0.0
         
         elif min(min(self.LaserData[slice(0,5)]),min(self.LaserData[slice(350,360)])) < self.FrontDist:
@@ -90,14 +90,14 @@ class FollowTheWall(Node):
             # Stop moving forward
             msg.linear.x = 0.0
             # Start turning left until parallel to the wall
-            msg.angular.z = 0.9
+            msg.angular.z = 1.0
             self.turning_right = True
             turn = True
             #self.get_logger().info(len(self.))
         else:
             # Move forward
             #self.get_logger().info(f'normal front {self.LaserData[0]}')
-            msg.linear.x = 0.5
+            msg.linear.x = 0.8
             # Stop turning
             msg.angular.z = 0.0
 
