@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'follow_wall = follow_wall.follow_wall_node:main'
+            'follow_wall_node = follow_wall.follow_wall_node:main'
         ],
     },
 )
