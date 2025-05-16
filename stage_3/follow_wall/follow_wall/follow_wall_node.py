@@ -82,7 +82,7 @@ class FollowTheWall(Node):
                 msg.linear.x = 0.0  
                 msg.angular.z = error * fact 
             else:
-                msg.linear.x = 0.1
+                msg.linear.x = 0.5
                 msg.angular.z =0.0
         
         elif min(min(self.LaserData[slice(0,5)]),min(self.LaserData[slice(350,360)])) < self.FrontDist:
@@ -97,7 +97,7 @@ class FollowTheWall(Node):
         else:
             # Move forward
             #self.get_logger().info(f'normal front {self.LaserData[0]}')
-            msg.linear.x = 0.1
+            msg.linear.x = 0.5
             # Stop turning
             msg.angular.z = 0.0
 
