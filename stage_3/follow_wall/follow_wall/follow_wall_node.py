@@ -15,7 +15,7 @@ class FollowTheWall(Node):
         self.parallel_threshold = 0.01  # Threshold for being parallel to the wall
         self.turning_right = False
         self.turning_left = False
-        self.FrontDist = 1.0
+        self.FrontDist = 0.8
 
 
         self.timer = self.create_timer(0.1, self.timer_callback)
