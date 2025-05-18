@@ -36,8 +36,8 @@ class FollowTheWall(Node):
             # Check if robot is parallel to the wall
             #if abs(self.LaserData[85] - self.LaserData[95]) < self.parallel_threshold:
             #while turn and round((abs(self.LaserData[90] - self.FrontDist)), 3) > 0.01:
-            while turn and (abs(self.LaserData[86+180] - self.LaserData[94+180])) > 0.005 and round((abs(self.LaserData[90+180] - self.FrontDist)), 3) > 0.01:
-                msg.angular.z = 0.1
+            while turn and (abs(self.LaserData[86+180] - self.LaserData[94+180])) > 0.001 and round((abs(self.LaserData[90+180] - self.FrontDist)), 3) > 0.01:
+                msg.angular.z = 0.4
                 msg.linear.x = 0.0
                 self.cmd_vel_pub.publish(msg)
                 #self.get_logger().info('Initial left turn')
