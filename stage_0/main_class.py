@@ -3,6 +3,10 @@
 import ast
 import math
 import time
+from pathlib import Path
+
+
+LASERDATA = Path(__file__).resolve().parent / "laser-testdata_2"
 
 
 class LaserModel(object):
@@ -84,7 +88,7 @@ class LaserModel(object):
     '''
 
     def run(self):
-        self.update_laserdata("laser-testdata/laser-testdata_2")
+        self.update_laserdata(LASERDATA)
         # print current results
         print("-"*20 +
               str("\nCurrent cycle: {0}" +
@@ -98,7 +102,7 @@ if __name__ == '__main__':
 
     # instantiate the class and set some parameters
     app = LaserModel(-math.pi/2, math.pi/2, 0.0, 7.0)
-    app.update_laserdata("laser-testdata/laser-testdata_2")
+    app.update_laserdata(LASERDATA)
     app.set_angle_inc(app.calc_angle_inc())
 
     print("-"*20 +

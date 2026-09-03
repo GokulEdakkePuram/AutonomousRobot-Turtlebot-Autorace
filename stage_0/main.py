@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import ast
+import sys
+from pathlib import Path
 
 #set constants
 angle_min= -1.57079637051
@@ -57,7 +59,9 @@ if __name__ == "__main__":
 	#import ipdb; ipdb.set_trace()
 
 	#read raw laser data
-	scan_data = get_laserdata("/Users/gokulmnambiar/Desktop/GitLabRepo/Robotics/ge-235725_tier1/laser-testdata/laser-testdata_1")
+	#default to the recorded scan shipped with the repo, or take a path on the command line
+	default_path = Path(__file__).resolve().parent / "laser-testdata_1"
+	scan_data = get_laserdata(sys.argv[1] if len(sys.argv) > 1 else default_path)
 	
 	#import ipdb; ipdb.set_trace()
 
