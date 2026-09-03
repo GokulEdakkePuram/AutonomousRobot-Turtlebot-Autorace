@@ -13,9 +13,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='gokul.edakkepuram',
+    maintainer='Gokul Edakke Puram',
     maintainer_email='gokul.edakkepuram@hs-weingarten.de',
-    description='Examples of minimal publisher/subscriber using rclpy',
+    description='Minimal rclpy publisher and subscriber pair exchanging std_msgs/String.',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={

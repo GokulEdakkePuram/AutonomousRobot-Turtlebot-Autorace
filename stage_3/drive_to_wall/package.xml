@@ -3,9 +3,13 @@
 <package format="3">
   <name>drive_to_wall</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="root@todo.todo">root</maintainer>
-  <license>TODO: License declaration</license>
+  <description>Drives the TurtleBot3 forward and stops at a fixed standoff distance from the wall ahead using LiDAR.</description>
+  <maintainer email="gokul.edakkepuram@hs-weingarten.de">Gokul Edakke Puram</maintainer>
+  <license>Apache-2.0</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

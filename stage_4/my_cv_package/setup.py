@@ -13,9 +13,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='root',
-    maintainer_email='root@todo.todo',
-    description='TODO: Package description',
+    maintainer='Gokul Edakke Puram',
+    maintainer_email='gokul.edakkepuram@hs-weingarten.de',
+    description='Camera-based lane following for the TurtleBot3 using HSV masking and ROI centroid tracking.',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={

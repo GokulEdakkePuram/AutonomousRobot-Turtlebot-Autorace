@@ -13,10 +13,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='root',
-    maintainer_email='root@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='Gokul Edakke Puram',
+    maintainer_email='gokul.edakkepuram@hs-weingarten.de',
+    description='LiDAR wall following for the TurtleBot3: aligns the robot parallel to a wall and tracks it with a proportional controller.',
+    license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

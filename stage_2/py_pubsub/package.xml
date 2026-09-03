@@ -3,8 +3,8 @@
 <package format="3">
   <name>py_pubsub</name>
   <version>0.0.0</version>
-  <description>Simple Publisher Subscriber Node</description>
-  <maintainer email="gokul.edakkepuram@hs-weingarten.de">root</maintainer>
+  <description>Minimal rclpy publisher and subscriber pair exchanging std_msgs/String.</description>
+  <maintainer email="gokul.edakkepuram@hs-weingarten.de">Gokul Edakke Puram</maintainer>
   <license>Apache-2.0</license>
 
   <exec_depend>rclpy</exec_depend>

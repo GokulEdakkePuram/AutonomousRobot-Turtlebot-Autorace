@@ -13,9 +13,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='root',
-    maintainer_email='root@todo.todo',
-    description='TODO: Package description',
+    maintainer='Gokul Edakke Puram',
+    maintainer_email='gokul.edakkepuram@hs-weingarten.de',
+    description='Detects a red triangular tunnel sign with OpenCV and drives the TurtleBot3 into the tunnel.',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
